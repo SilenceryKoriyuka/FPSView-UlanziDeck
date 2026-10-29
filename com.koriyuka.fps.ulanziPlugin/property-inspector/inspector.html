@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui,viewport-fit=cover" />
+  <title>System Monitor</title>
+  <link rel="stylesheet" href="../libs/css/uspi.css">
+  <style>
+    .uspi-item-value.short { width: 96px; }
+  </style>
+</head>
+<body>
+  <div class="uspi-wrapper hidden">
+    <form id="property-inspector">
+
+      <div class="uspi-heading">Display</div>
+
+      <div class="uspi-item">
+        <div class="uspi-item-label empty"></div>
+        <div class="uspi-item-value">
+          <div class="uspi-item-child">
+            <input id="showGraph" name="showGraph" type="checkbox" value="on" checked>
+            <label for="showGraph">Show history graph</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="uspi-item">
+        <div class="uspi-item-label empty"></div>
+        <div class="uspi-item-value">
+          <div class="uspi-item-child">
+            <input id="colorCoding" name="colorCoding" type="checkbox" value="on" checked>
+            <label for="colorCoding">Color numbers by status (green / yellow / red)</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="uspi-item">
+        <div class="uspi-item-label">Auto page</div>
+        <select class="uspi-item-value select" name="autoCycleSec">
+          <option value="">Default (Overview: 5 s, others: off)</option>
+          <option value="0">Off, press to change</option>
+          <option value="3">Every 3 s</option>
+          <option value="5">Every 5 s</option>
+          <option value="10">Every 10 s</option>
+        </select>
+      </div>
+
+      <div class="uspi-item">
+        <div class="uspi-item-label">Check every</div>
+        <select class="uspi-item-value select" name="refreshMs">
+          <option value="250" selected>0.25 s (recommended)</option>
+          <option value="500">0.5 s</option>
+          <option value="1000">1 s</option>
+        </select>
+      </div>
+
+      <div class="uspi-heading">Thresholds</div>
+
+      <div class="uspi-item">
+        <div class="uspi-item-label">FPS good at</div>
+        <input class="uspi-item-value short" type="number" name="fpsGood" value="60" min="1">
+      </div>
+
+      <div class="uspi-item">
+        <div class="uspi-item-label">FPS low below</div>
+        <input class="uspi-item-value short" type="number" name="fpsWarn" value="30" min="1">
+      </div>
+
+      <div class="uspi-item">
+        <div class="uspi-item-label">GPU hot at °C</div>
+        <input class="uspi-item-value short" type="number" name="gpuHot" value="83" min="40" max="120">
+      </div>
+
+      <div class="uspi-item">
+        <div class="uspi-item-label">CPU hot at °C</div>
+        <input class="uspi-item-value short" type="number" name="cpuHot" value="90" min="40" max="120">
+      </div>
+
+      <div class="uspi-heading">Hardware</div>
+
+      <div class="uspi-item">
+        <div class="uspi-item-label">GPU index</div>
+        <select class="uspi-item-value select" name="gpuIndex">
+          <option value="0" selected>GPU 0</option>
+          <option value="1">GPU 1</option>
+        </select>
+      </div>
+
+      <p class="tip info">Each page shows one stat. Press the key for the next page. Only sensors ticked in MSI Afterburner → Settings → Monitoring appear.</p>
+
+    </form>
+  </div>
+
+  <script src="../libs/js/constants.js"></script>
+  <script src="../libs/js/eventEmitter.js"></script>
+  <script src="../libs/js/timers.js"></script>
+  <script src="../libs/js/utils.js"></script>
+  <script src="../libs/js/ulanziApi.js"></script>
+  <script src="./inspector.js"></script>
+</body>
+</html>

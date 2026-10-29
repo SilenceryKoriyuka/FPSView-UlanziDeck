@@ -1,0 +1,74 @@
+{
+  "Author": "Koriyuka",
+  "Name": "System Monitor",
+  "Description": "FPS, GPU, CPU and RAM stats from MSI Afterburner",
+  "Icon": "assets/icons/plugin.svg",
+  "Version": "1.0.0",
+  "Category": "System Monitor",
+  "CategoryIcon": "assets/icons/plugin.svg",
+  "CodePath": "plugin/app.js",
+  "Type": "JavaScript",
+  "Inspect": "--inspect=127.0.0.1:9247",
+  "PrivateAPI": true,
+  "SupportedInMultiActions": false,
+  "UUID": "com.koriyuka.ulanzistudio.sysmon",
+  "Actions": [
+    {
+      "Name": "FPS",
+      "Icon": "assets/icons/fps.svg",
+      "PropertyInspectorPath": "property-inspector/inspector.html",
+      "state": 0,
+      "States": [{ "Name": "Default", "Image": "assets/icons/fps.svg" }],
+      "Tooltip": "Framerate, frametime, min/avg/max and 1%/0.1% lows",
+      "UUID": "com.koriyuka.ulanzistudio.sysmon.fps",
+      "SupportedInMultiActions": false,
+      "Controllers": ["Keypad"]
+    },
+    {
+      "Name": "GPU",
+      "Icon": "assets/icons/gpu.svg",
+      "PropertyInspectorPath": "property-inspector/inspector.html",
+      "state": 0,
+      "States": [{ "Name": "Default", "Image": "assets/icons/gpu.svg" }],
+      "Tooltip": "GPU temperature, usage, clocks, power and VRAM",
+      "UUID": "com.koriyuka.ulanzistudio.sysmon.gpu",
+      "SupportedInMultiActions": false,
+      "Controllers": ["Keypad"]
+    },
+    {
+      "Name": "CPU",
+      "Icon": "assets/icons/cpu.svg",
+      "PropertyInspectorPath": "property-inspector/inspector.html",
+      "state": 0,
+      "States": [{ "Name": "Default", "Image": "assets/icons/cpu.svg" }],
+      "Tooltip": "CPU temperature, usage, clock and power",
+      "UUID": "com.koriyuka.ulanzistudio.sysmon.cpu",
+      "SupportedInMultiActions": false,
+      "Controllers": ["Keypad"]
+    },
+    {
+      "Name": "RAM",
+      "Icon": "assets/icons/ram.svg",
+      "PropertyInspectorPath": "property-inspector/inspector.html",
+      "state": 0,
+      "States": [{ "Name": "Default", "Image": "assets/icons/ram.svg" }],
+      "Tooltip": "RAM used, total and used by the game process",
+      "UUID": "com.koriyuka.ulanzistudio.sysmon.ram",
+      "SupportedInMultiActions": false,
+      "Controllers": ["Keypad"]
+    },
+    {
+      "Name": "Overview",
+      "Icon": "assets/icons/combined.svg",
+      "PropertyInspectorPath": "property-inspector/inspector.html",
+      "state": 0,
+      "States": [{ "Name": "Default", "Image": "assets/icons/combined.svg" }],
+      "Tooltip": "FPS, GPU, CPU, RAM and 1% low on one key",
+      "UUID": "com.koriyuka.ulanzistudio.sysmon.combined",
+      "SupportedInMultiActions": false,
+      "Controllers": ["Keypad"]
+    }
+  ],
+  "OS": [{ "Platform": "windows", "MinimumVersion": "10" }],
+  "Software": { "MinVersion": "2.1.4" }
+}

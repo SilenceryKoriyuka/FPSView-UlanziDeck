@@ -1,0 +1,24 @@
+{
+  "name": "ulanzi-system-monitor",
+  "version": "1.0.0",
+  "description": "Real-time hardware monitoring for Ulanzi Deck using MSI Afterburner",
+  "type": "module",
+  "main": "plugin/app.js",
+  "author": "Koriyuka",
+  "license": "MIT",
+  "dependencies": {
+    "koffi": "^3.3.5",
+    "ws": "^8.22.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "sensors": "node scripts/dump-sensors.js",
+    "rtss": "node scripts/rtss-probe.js",
+    "preview": "node scripts/preview.js",
+    "icons": "node scripts/make-icons.js",
+    "smoke": "node scripts/smoke-test.js",
+    "package": "node scripts/package.js"
+  }
+}
